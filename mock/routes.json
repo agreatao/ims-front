@@ -1,4 +1,4 @@
 {
-  "/api/test.do": "/test",
+  "/ims/depot/adada?a=:a": "/test",
   "/api/test2.do": "/test2"
 }

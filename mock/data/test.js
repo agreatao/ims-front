@@ -1,10 +1,9 @@
 module.exports = {
     code: "",
     data: {
-        a: 1,
-        b: "aa"
+        list: [],
+        total: 3
     },
     msg: "success",
-    total: 3,
     type: 0
 };

@@ -54,7 +54,7 @@ if (config.request && NODE_ENV != 'production') axios.defaults.baseURL = config.
 });
 
 http.bind = (Vue) => {
-    Vue.prototype.$http = this;
+    Vue.prototype.$http = http;
 }
 
 export default http;
