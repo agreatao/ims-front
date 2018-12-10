@@ -12,6 +12,9 @@ import router from 'router';
 import store from 'store';
 import 'lib/browser';
 
+import components from 'components';
+components.bind(Vue);
+
 import http from 'lib/http';
 http.bind(Vue);
 

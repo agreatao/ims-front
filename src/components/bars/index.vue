@@ -6,10 +6,12 @@
 			</div>
 			<div class="bars-right">
 				<slot name="right"></slot>
-				<a v-if="$slots.filter" class="filter-btn" @click="toggleFilter">aa</a>
+				<a v-if="$slots.filter" class="filter-btn" :class="show ? 'active' : ''" @click="toggleFilter">
+					<font-awesome-icon icon="filter" />
+				</a>
 			</div>
 		</div>
-		<div v-if="$slots.filter && show" class="filter">
+		<div v-if="$slots.filter && show" class="bars-filter">
 			<slot name="filter"></slot>
 		</div>
 	</div>
@@ -33,17 +35,41 @@
 	};
 </script>
 <style lang="less">
-.bars {
-	display: table;
-	width: 100%;
-	.bars-left {
-		display: table-cell;
-		vertical-align: top;
+.bars-wrapper {
+	border-bottom: 1px solid #e5e5e5;
+	.bars {
+		display: table;
+		width: 100%;
+		height: 48px;
+		padding: 0 14px;
+		.bars-left, .bars-right {
+			display: table-cell;
+			vertical-align: middle;
+			&>* {
+				display: inline-block;
+			}
+		}
+		.bars-right {
+			text-align: right;
+		}
+		.filter-btn {
+			width: 32px;
+			height: 32px;
+			line-height: 32px;
+			border-radius: 2px;
+			text-align: center;
+			&.active {
+				background-color: #eaeaea;
+				color: #409eff;
+			}
+		}
 	}
-	.bars-right {
-		display: table-cell;
-		vertical-align: top;
-		text-align: right;
+	.bars-filter {
+		display: block;
+		background: #f6f6f6;
+		border-top: 1px solid #e5e5e5;
+		padding: 18px 14px 0;
 	}
 }
+
 </style>

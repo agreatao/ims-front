@@ -1,46 +1,61 @@
 <template>
 	<div class="depot-search-page">
-		<bars>
+		<bars
+			@onToggleFilter="onToggleFilter"
+		>
 			<template slot="left">
 				<a>新增</a>
 				<a>删除</a>
 			</template>
-			<template slot="right">
-				<a>dadda</a>
-			</template>
 			<template slot="filter">
-				<div>aaa</div>
+				<search-filter />
 			</template>
 		</bars>
-		<pagination />
+		<table-data
+			:filter-height="filterShow ? 66 : 0"
+			:columns="[
+				{
+					prop: 'time',
+					label: '时间'
+				}
+			]"
+		/>
+		<pagination
+			:pageNo="1"
+			:pageSize="20"
+			:total="100"
+			:pageSizeOptions="[10, 20, 30, 40]"
+			@pageChange="pageChange"
+		/>
 	</div>
 </template>
 <script>
 	import { mapState } from 'vuex';
 
-	import bars from "components/bars";
-	import pagination from "components/pagination";
+	import searchFilter from './forms/searchFilter';
 
 	export default {
 		name: "depotSearch",
-		components: {
-			bars, pagination
-		},
-		data() {
-			return {
-				
-			}
-		},
-		created() {
-			
-		},
+		components: { searchFilter },
 		computed: {
 			...mapState({
 				browser: state => state.browser
 			})
 		},
+		data() {
+			return {
+				filterShow: false
+			}
+		},
 		methods: {
-			
+			pageChange(pageNo, pageSize) {
+				this.pageNo = pageNo;
+				this.pageSize = pageSize;
+				console.log(pageNo, pageSize);
+			},
+			onToggleFilter(filterShow) {
+				this.filterShow = filterShow;
+			}
 		}
 	};
 </script>
