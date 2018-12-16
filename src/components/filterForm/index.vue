@@ -1,0 +1,71 @@
+<template>
+	<el-form :inline="true" :model="formInline" size="mini" class="filter-form">
+		<el-form-item
+			v-for="(prop, key) in formProps"
+			:key="key"
+			:label="prop.label">
+			<el-input v-if="prop.type =='input'" v-model="formInline[key]"/>
+			<el-select v-else-if="prop.type=='select'" v-model="formInline[key]">
+				<el-option
+					v-for="(option, index) in prop.options"
+					:key="index"
+					:label="option.label"
+					:value="option.value"
+				/>
+			</el-select>
+		</el-form-item><el-form-item>
+			<el-button type="primary" @click="onSubmit">查询</el-button>
+			<el-button @click="onReset">重置</el-button>
+		</el-form-item>
+	</el-form>
+</template>
+<script>
+	export default {
+		name: "filterForm",
+		props: {
+			formProps: {
+				type: Object,
+				required: true
+			}
+		},
+		data() {
+			let formInline = {};
+			for (let key in this.formProps) {
+				formInline[key] = "";
+			}
+			return {
+				formInline
+			};
+		},
+		methods: {
+			onSubmit() {
+				this.$emit("onFilter", this.formInline);
+			},
+			onReset() {
+				for (let key in this.formInline) {
+					this.formInline[key] = "";
+				}
+				this.$emit("onFilter", this.formInline);
+			}
+		}
+	};
+</script>
+<style lang="less">
+.filter-form {
+	display: block;
+	.el-form-item--mini {
+		margin-right: 0;
+		width: 25%;
+		display: inline-flex;
+		min-height: 1px;
+	}
+	.el-form-item__label {
+		font-size: 12px;
+		width: 80px;
+	}
+	.el-form-item__content {
+		width: 150px;
+		vertical-align: middle;
+	}
+}
+</style>

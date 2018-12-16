@@ -7,7 +7,7 @@
 			<div class="bars-right">
 				<slot name="right"></slot>
 				<a v-if="$slots.filter" class="filter-btn" :class="show ? 'active' : ''" @click="toggleFilter">
-					<font-awesome-icon icon="filter" />
+					fliter
 				</a>
 			</div>
 		</div>
@@ -37,6 +37,7 @@
 <style lang="less">
 .bars-wrapper {
 	border-bottom: 1px solid #e5e5e5;
+	user-select: none;
 	.bars {
 		display: table;
 		width: 100%;
@@ -47,6 +48,7 @@
 			vertical-align: middle;
 			&>* {
 				display: inline-block;
+				vertical-align: middle;
 			}
 		}
 		.bars-right {

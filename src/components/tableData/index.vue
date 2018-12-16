@@ -18,7 +18,20 @@
 	import { mapState } from "vuex";
 	export default {
 		name: "tableData",
-		props: ["data", "filterHeight", "columns", "width"],
+		props: {
+			data: {
+				type: Array,
+				required: true
+			},
+			filterHeight: {
+				type: Number,
+				default: 0
+			},
+			columns: {
+				type: Array,
+				required: true
+			}
+		},
 		computed: {
 			...mapState({
 				browser: state => state.browser

@@ -7,8 +7,7 @@
 			<div class="user-profile">
 				<router-link to="/welcome">
 					<avatar name="admin"/>
-				</router-link>
-				<a>退出</a>
+				</router-link><a>退出</a>
 			</div>
 		</el-header>
 		<el-container class="master-body" :style="{height: (browser.height - 60) + 'px'}">
