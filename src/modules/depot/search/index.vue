@@ -4,7 +4,8 @@
 			@onToggleFilter="onToggleFilter"
 		>
 			<template slot="left">
-				<a>新增</a><a>删除</a>
+				<a>新增</a>
+				<a>删除</a>
 			</template>
 			<template slot="filter">
 				<search-filter
@@ -16,6 +17,8 @@
 						status: {
 							label: '状态',
 							type: 'select',
+							initialValue: '1',
+							filterable: true,
 							options: [
 								{
 									label: '出库',
@@ -30,7 +33,7 @@
 						size: {
 							label: '型号',
 							type: 'input'
-						},
+						}
 					}"
 					@onFilter="onFilter"
 				/>

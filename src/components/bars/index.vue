@@ -47,12 +47,21 @@
 			display: table-cell;
 			vertical-align: middle;
 			&>* {
-				display: inline-block;
-				vertical-align: middle;
+				display: block;
+				& + * {
+					margin-left: 5px;
+				}
+			}
+		}
+		.bars-left {
+			&>* {
+				float: left;
 			}
 		}
 		.bars-right {
-			text-align: right;
+			&>* {
+				float: right;
+			}
 		}
 		.filter-btn {
 			width: 32px;

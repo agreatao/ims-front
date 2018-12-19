@@ -5,7 +5,7 @@
 			:key="key"
 			:label="prop.label">
 			<el-input v-if="prop.type =='input'" v-model="formInline[key]"/>
-			<el-select v-else-if="prop.type=='select'" v-model="formInline[key]">
+			<el-select v-else-if="prop.type=='select'" :filterable="formProps[key].filterable" v-model="formInline[key]">
 				<el-option
 					v-for="(option, index) in prop.options"
 					:key="index"
@@ -13,9 +13,9 @@
 					:value="option.value"
 				/>
 			</el-select>
-		</el-form-item><el-form-item>
-			<el-button type="primary" @click="onSubmit">查询</el-button>
-			<el-button @click="onReset">重置</el-button>
+		</el-form-item>
+		<el-form-item>
+			<el-button type="primary" @click="onSubmit">查询</el-button><el-button @click="onReset">重置</el-button>
 		</el-form-item>
 	</el-form>
 </template>
@@ -31,28 +31,35 @@
 		data() {
 			let formInline = {};
 			for (let key in this.formProps) {
-				formInline[key] = "";
+				formInline[key] = this.formProps[key].initialValue || null;
 			}
+			console.log(formInline);
 			return {
 				formInline
 			};
 		},
 		methods: {
 			onSubmit() {
-				this.$emit("onFilter", this.formInline);
+				let value = {};
+				for(let prop in this.formInline) {
+					value[prop] = this.formInline[prop];
+				}
+				this.$emit("onFilter", value);
 			},
 			onReset() {
-				for (let key in this.formInline) {
-					this.formInline[key] = "";
+				let value = {};
+				for (let key in this.formProps) {
+					this.formInline[key] = this.formProps[key].initialValue || null;
+					value[key] = this.formProps[key].initialValue || null;
 				}
-				this.$emit("onFilter", this.formInline);
+				this.$emit("onFilter", value);
 			}
 		}
 	};
 </script>
 <style lang="less">
 .filter-form {
-	display: block;
+	display: flex;
 	.el-form-item--mini {
 		margin-right: 0;
 		width: 25%;
@@ -61,11 +68,20 @@
 	}
 	.el-form-item__label {
 		font-size: 12px;
-		width: 80px;
+		width: 72px;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
 	}
 	.el-form-item__content {
-		width: 150px;
 		vertical-align: middle;
+		flex: 1;
+		.el-select {
+			width: 100%;
+		}
+	}
+	.el-button {
+		margin-left: 20px;
 	}
 }
 </style>
