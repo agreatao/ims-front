@@ -7,7 +7,7 @@
 			<div class="bars-right">
 				<slot name="right"></slot>
 				<a v-if="$slots.filter" class="filter-btn" :class="show ? 'active' : ''" @click="toggleFilter">
-					fliter
+					<svg t="1545933725104" viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M854.688 214.336 608.053 460.972l0 371.204c0 13.007-8.004 24.514-19.511 29.517-4.002 1.5-8.505 2.501-12.507 2.501-8.505 0-16.51-3.002-22.512-9.505l-128.071-128.07c-6.003-6.004-9.505-14.008-9.505-22.513L415.947 460.972 169.312 214.336c-9.505-9.005-12.007-23.012-7.004-35.019 5.002-11.506 16.509-19.511 29.516-19.511l640.352 0c13.007 0 24.514 8.004 29.517 19.511C866.694 191.324 864.193 205.332 854.688 214.336z"></path></svg>
 				</a>
 			</div>
 		</div>
@@ -39,36 +39,39 @@
 	border-bottom: 1px solid #e5e5e5;
 	user-select: none;
 	.bars {
-		display: table;
-		width: 100%;
-		height: 48px;
-		padding: 0 14px;
+		display: block;
+		padding: 4px 14px;
+		&:after {
+			clear: both;
+			content: "";
+			display: block;
+		}
 		.bars-left, .bars-right {
-			display: table-cell;
-			vertical-align: middle;
+			display: block;
 			&>* {
 				display: block;
-				& + * {
-					margin-left: 5px;
-				}
+				float: left;
+				min-width: 32px;
+				height: 32px;
+				line-height: 32px;
 			}
 		}
 		.bars-left {
-			&>* {
-				float: left;
-			}
+			float: left;
 		}
 		.bars-right {
-			&>* {
-				float: right;
-			}
+			float: right;
 		}
 		.filter-btn {
 			width: 32px;
-			height: 32px;
-			line-height: 32px;
 			border-radius: 2px;
 			text-align: center;
+			font-size: 22px;
+			padding: 5px;
+			color: #555;
+			svg {
+				display: block;
+			}
 			&.active {
 				background-color: #eaeaea;
 				color: #409eff;
@@ -79,7 +82,6 @@
 		display: block;
 		background: #f6f6f6;
 		border-top: 1px solid #e5e5e5;
-		padding: 18px 14px 0;
 	}
 }
 

@@ -1,0 +1,55 @@
+.alert-wrapper {
+    padding-bottom: 24px;
+    .el-message-box__content {
+        padding: 32px 32px 0 32px;
+    }
+    .el-message-box__btns {
+        padding: 24px 32px 0 32px;
+    }
+    .alert {
+        h4 {
+            margin: 0;
+            i {
+                display: block;
+                float: left;
+                font-style: normal;
+                text-align: center;
+                text-transform: none;
+                line-height: 0;
+                text-rendering: optimizeLegibility;
+                font-size: 22px;
+                margin-right: 16px;
+                svg {
+                    display: inline-block;
+                    line-height: 1;
+                }
+                &.info {
+                    color: #1890ff;
+                }
+                &.confirm, &.warn {
+                    color: #faad14;
+                }
+                &.success {
+                    color: #52c41a;
+                }
+                &.error {
+                    color: #f5222d;
+                }
+                span {
+                    color: rgba(0,0,0,0.85);
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 1.4;
+                    overflow: hidden;
+                }
+            }
+        }
+        p {
+            margin-left: 38px;
+            font-size: 14px;
+            color: rgba(0,0,0,0.65);
+            margin-top: 8px;
+        }
+    }
+    
+}

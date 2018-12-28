@@ -1,20 +1,11 @@
 module.exports = {
     basic: [
         {
-            to: "/company",
-            title: "公司信息"
-        },
-        {
-            to: "/employee",
-            title: "员工信息"
+            to: "/repo",
+            title: "仓库管理"
         }
     ],
-    depot: [
-        {
-            to: "/depot_search",
-            title: "库存查询"
-        }
-    ],
+    depot: [],
     purchase: [],
     sales: [],
     system: []
