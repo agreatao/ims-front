@@ -9,6 +9,7 @@ body {
     font-size: 12px;
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
     font-weight: 400;
+    background: #f6f6f6;
 }
 
 body {
@@ -24,6 +25,12 @@ textarea {
 a {
     text-decoration: none;
     cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 ::-webkit-scrollbar {
@@ -61,5 +68,13 @@ html {
     @import './element-ui/table.less';
     .el-select-dropdown__item {
         font-size: 12px;
+    }
+    .el-card__header {
+        padding: 8px 16px;
+        background-color: #fafafa;
+    }
+    .el-card__body {
+        padding: 16px;
+        background: #fff;
     }
 }

@@ -9,7 +9,10 @@ const router =  new Router({
         {
             path: '/', component: () => import('pages/master'),
             children: [
-                { path: 'repo', component: () => import('modules/basic/repo')}
+                { path: 'repo', component: () => import('modules/basic/repo')},
+                { path: 'repo/:id', component: () => import("modules/basic/repo_detail")},
+                { path: 'product', component: () => import("modules/basic/product")},
+                
             ]
         }
     ]

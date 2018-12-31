@@ -36,8 +36,9 @@
 </script>
 <style lang="less">
 .bars-wrapper {
-	border-bottom: 1px solid #e5e5e5;
+	border-bottom: 1px solid #ebeef5;
 	user-select: none;
+	margin-bottom: 10px;
 	.bars {
 		display: block;
 		padding: 4px 14px;
@@ -73,15 +74,21 @@
 				display: block;
 			}
 			&.active {
-				background-color: #eaeaea;
+				background-color: #fafafa;
 				color: #409eff;
 			}
 		}
 	}
 	.bars-filter {
 		display: block;
-		background: #f6f6f6;
-		border-top: 1px solid #e5e5e5;
+		background: #fafafa;
+		border-top: 1px solid #ebeef5;
+		padding: 10px 20px;
+		.el-form {
+			.el-form-item {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 

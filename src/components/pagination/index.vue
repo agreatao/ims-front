@@ -27,7 +27,7 @@
 				size="mini"
 				:style="{width: '80px'}"
 			/>
-			<span>/ {{Math.ceil(dataTotal / dataPageSize)}} 页</span>
+			<span>/ {{Math.max(1, Math.ceil(dataTotal / dataPageSize))}} 页</span>
 			<el-button @click="jumpTo" size="mini">跳转</el-button>
 		</div>
 	</div>
