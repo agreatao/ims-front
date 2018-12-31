@@ -12,6 +12,7 @@ const router =  new Router({
                 { path: 'repo', component: () => import('modules/basic/repo')},
                 { path: 'repo/:id', component: () => import("modules/basic/repo_detail")},
                 { path: 'product', component: () => import("modules/basic/product")},
+                { path: 'product/add', component: () => import("modules/basic/product_add_or_edit")},
                 
             ]
         }

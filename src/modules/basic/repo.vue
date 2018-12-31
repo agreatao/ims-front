@@ -1,5 +1,5 @@
 <template>
-	<div class="repo-page">
+	<page page-class="repo">
 		<bars>
 			<template slot="left">
 				<a @click="handleAdd">新增</a><a @click="handleDelete()">删除</a>
@@ -78,7 +78,7 @@
 				<el-button size="small" @click="visible = false">取 消</el-button>
 			</div>
 		</el-dialog>
-	</div>
+	</page>
 </template>
 <script>
 	export default {
@@ -186,7 +186,7 @@
 	};
 </script>
 <style lang="less">
-.repo-page {
+.page-repo {
 	background: #fff;
 	border-radius: 4px;
 	box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);

@@ -76,7 +76,11 @@
 			.master-title {
 				position: absolute;
 				top: 0;
-				left: 0;
+				left: 20px;
+				height: 55px;
+				line-height: 55px;
+				color: #fff;
+				font-size: 18px;
 			}
 			& > a, .nav > .nav-bar {
 				display: inline-block;

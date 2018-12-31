@@ -1,18 +1,18 @@
 <template>
-    <div class="product-page">
+    <page page-class="product">
         <bars>
 			<template slot="left">
-				<a @click="handleAdd">新增</a><a @click="handleDelete()">删除</a>
+				<router-link to="/product/add">新增</router-link><a @click="handleDelete()">删除</a>
 			</template>
 			<template slot="filter">
 				<el-form
 					inline
 					:model="filter"
 					size="small">
-					<el-form-item label="仓库名称">
+					<el-form-item label="产品名称">
 						<el-input v-model="filter.name"/>
 					</el-form-item>
-					<el-form-item label="地址">
+					<el-form-item label="规格型号">
 						<el-input v-model="filter.address"/>
 					</el-form-item>
 					<el-form-item>
@@ -26,8 +26,8 @@
 			:data="data"
 			@selection-change="handleSelectChange">
 			<el-table-column type="selection" width="50"/>
-			<el-table-column prop="name" label="仓库名称" min-width="200" />
-			<el-table-column prop="address" label="地址" min-width="300" />
+			<el-table-column prop="name" label="产品名称" min-width="200" />
+			<el-table-column prop="address" label="规格型号" min-width="300" />
 			<el-table-column prop="creator" label="创建人" width="200" />
 			<el-table-column label="操作" width="200">
 				<template slot-scope="scope">
@@ -43,7 +43,7 @@
             :total="total"
 			@pageChange="pageChange"
         />
-    </div>
+    </page>
 </template>
 <script>
 export default {
@@ -52,7 +52,7 @@ export default {
         return {
             filter: {},
 
-            page: 1,
+            pageNo: 1,
             pageSize: 20,
             total: 0,
             data: []
@@ -90,7 +90,7 @@ export default {
 }
 </script>
 <style lang="less">
-.product-page {
+.page-product {
 	background: #fff;
 	border-radius: 4px;
 	box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);

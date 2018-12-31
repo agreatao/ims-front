@@ -1,9 +1,12 @@
 <template>
-	<div class="repo-detail-page">
-		<el-card class="box-card">
-            <div slot="header" class="clearfix">
-                <span class="box-title">仓库详情</span>
-                <el-button style="float: right;" size="mini">编辑</el-button>
+	<page
+        page-class="repo-detail"
+        back="/repo"
+        :breadthumb="[{label: '首页'}, {label: '库存列表'}, {label: '库存详情'}]">
+		<panel>
+            <div slot="header">
+                <span>仓库详情</span>
+                <el-button size="mini">编辑</el-button>
             </div>
             <div class="repo-detail">
                 <div class="repo-image">
@@ -28,9 +31,9 @@
                     </div>
                 </div>
             </div>
-        </el-card>
-        <el-card class="box-card">
-            <div slot="header" class="clearfix">
+		</panel>
+        <panel>
+            <div slot="header">
                 <span class="box-title">产品详情</span>
             </div>
             <el-table
@@ -52,8 +55,8 @@
                 :total="total"
                 @pageChange="pageChange"
             />
-        </el-card>
-	</div>
+        </panel>
+	</page>
 </template>
 <script>
 	export default {
@@ -76,18 +79,7 @@
 	};
 </script>
 <style lang="less">
-.repo-detail-page {
-    .box-card {
-        .box-title {
-            display: inline-block;
-            height: 28px;
-            line-height: 28px;
-            font-size: 18px;
-        }
-    }
-    .box-card + .box-card {
-        margin-top: 10px;
-    }
+.page-repo-detail {
     .repo-detail {
         font-size: 16px;
         text-align: center;

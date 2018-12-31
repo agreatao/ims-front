@@ -33,6 +33,16 @@ ul {
     margin: 0;
 }
 
+.clearfix {
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+        visibility: hidden;
+        height: 0;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
