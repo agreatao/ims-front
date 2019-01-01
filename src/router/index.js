@@ -14,6 +14,8 @@ const router =  new Router({
                 { path: 'product', component: () => import("modules/basic/product")},
                 { path: 'product/add', component: () => import("modules/basic/product_add_or_edit")},
                 
+
+                { path: 'depot/search', component: () => import("modules/depot/search")},
             ]
         }
     ]

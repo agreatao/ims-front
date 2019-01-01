@@ -15,7 +15,7 @@
 							</ul>
 						</li><li>
 							<ul class="nav-item">
-								<!-- <li><router-link to="/repo">仓库管理</router-link></li> -->
+								<li><router-link to="/depot/search">库存查询</router-link></li>
 							</ul>
 						</li><li>
 							<ul class="nav-item">
@@ -151,11 +151,7 @@
 						display: inline-block;
 						vertical-align: top;
 						width: 200px;
-						// border-left: 1px solid #777;
 						height: 100%;
-						&:last-child {
-							// border-right: 1px solid #777;
-						}
 						&:hover {
 							background-color: rgba(100, 100, 100, .2);
 						}
