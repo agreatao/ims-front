@@ -28,7 +28,6 @@
 			<el-table-column type="selection" width="50"/>
 			<el-table-column prop="name" label="产品名称" min-width="200" />
 			<el-table-column prop="address" label="规格型号" min-width="300" />
-			<el-table-column prop="creator" label="创建人" width="200" />
 			<el-table-column label="操作" width="200">
 				<template slot-scope="scope">
 					<el-button @click="handleDetail(scope.row)" type="text" size="small">查看</el-button>

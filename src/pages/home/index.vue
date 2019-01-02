@@ -2,7 +2,9 @@
 	<div class="home-overflow">
 		<div class="home-container">
 			<home-header />
-			<home-body />
+			<home-body>
+				<router-view/>
+			</home-body>
 		</div>
 	</div>
 </template>

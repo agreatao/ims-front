@@ -1,8 +1,6 @@
 <template>
-    <div class="home-body">
-        <div class="body-container" :style="{height: (height - 55 - (width < 1360 ? 10 : 0)) + 'px'}">
-            <router-view/>
-        </div>
+    <div class="home-body" :style="{height: (height - 50 - (width < 1360 ? 9 : 0)) + 'px'}">
+        <slot></slot>
     </div>
 </template>
 <script>
@@ -18,5 +16,8 @@
     }
 </script>
 <style lang="less">
-
+.home-body {
+    padding: 10px;
+    overflow: hidden;
+}
 </style>

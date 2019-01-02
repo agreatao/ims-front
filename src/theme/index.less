@@ -58,7 +58,9 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
+    border-radius: 4px;
     background: #e5e5e5;
+    border: 2px solid transparent;
 }
 
 ::-webkit-scrollbar-button {
@@ -85,5 +87,16 @@ html {
     .el-card__body {
         padding: 16px;
         background: #fff;
+    }
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+        background-color: #fff;
+    }
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner::before {
+        background-color: #409EFF;
+        height: 12px;
+        width: 12px;
+        left: 0;
+        top: 0;
+        border-radius: 2px;
     }
 }

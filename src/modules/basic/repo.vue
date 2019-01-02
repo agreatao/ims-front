@@ -142,7 +142,8 @@
 				this.onloadData();
 			},
 			handleDetail(row) {
-				this.$router.push("/repo/" + row.id);
+				let path = this.$router.resolve("/repo/" + row.id);
+				window.open(path.href, '_blank');
 			},			
 			handleSelectChange(rows) {
 				this.selected = rows;
