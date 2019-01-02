@@ -1,0 +1,95 @@
+.master-header {
+    height: 55px;
+    background: #459df5;
+    position: relative;
+    // border-bottom: 1px solid #fafafa;
+    text-align: right;
+    padding: 0 20px;
+    .master-title {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        height: 55px;
+        line-height: 55px;
+        color: #fff;
+        font-size: 18px;
+    }
+    & > a, .nav > .nav-bar {
+        display: inline-block;
+        vertical-align: top;
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        color: #fff;
+        font-size: 16px;
+        text-align: left;
+        background-repeat: no-repeat;
+        background-position: center center;
+        &:hover {
+            background-color: rgba(100, 100, 100, .2);
+        }
+    }
+    .cogs {
+        background-image: url("~images/cogs.png");
+    }
+    .user {
+        background-image: url("~images/user.png");
+    }
+    .sign-out {
+        background-image: url("~images/sign-out.png");
+    }
+    .nav {
+        display: inline-block;
+        
+        .nav-menu {
+            position: absolute;
+            left: 0;
+            top: 55px;
+            background: rgba(36,97,158,0.9);
+            width: 100%;
+            text-align: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in;
+            // height: 0;
+            & > li {
+                display: inline-block;
+                vertical-align: top;
+                height: 100%;
+                &:hover {
+                    background-color: rgba(100, 100, 100, .2);
+                }
+            }
+        }
+        .nav-item {
+            display: inline-block;
+            vertical-align: top;
+            padding: 20px 0;
+            & > li {
+                display: block;
+                height: 30px;
+                line-height: 30px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                label {
+                    color: #777;
+                }
+                a {
+                    display: block;
+                    color: #fff;
+                    font-size: 14px;
+                    &:hover {
+                        color: #00C1DE;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.body-container {
+    padding: 10px;
+}

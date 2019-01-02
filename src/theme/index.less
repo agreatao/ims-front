@@ -33,29 +33,28 @@ ul {
     margin: 0;
 }
 
-.clearfix {
-    &:after {
-        display: block;
-        content: "";
-        clear: both;
-        visibility: hidden;
-        height: 0;
-    }
+.clearfix:after {
+    display: block;
+    content: "";
+    clear: both;
+    visibility: hidden;
+    height: 0;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 8px;
+    border-radius: 4px;
     background: #e5e5e5;
-    border: 2px solid #fff;
+    border: 2px solid transparent;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {

@@ -7,7 +7,7 @@ const router =  new Router({
     linkActiveClass: 'active',
     routes: [
         {
-            path: '/', component: () => import('pages/master'),
+            path: '/', component: () => import('pages/home'),
             children: [
                 { path: 'repo', component: () => import('modules/basic/repo')},
                 { path: 'repo/:id', component: () => import("modules/basic/repo_detail")},
