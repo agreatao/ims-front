@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 // const historyFallback = require('connect-history-api-fallback');
 const logger = require('morgan');
+const open = require("open");
 
 const app = express();
 
@@ -35,4 +36,5 @@ app.use((err, req, res, next) => {
 
 app.listen(4000, () => {
     console.log('server start at http://localhost:4000/web/');
+    open('http://localhost:4000/web/#/repo');
 })
