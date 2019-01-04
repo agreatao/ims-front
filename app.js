@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-// const historyFallback = require('connect-history-api-fallback');
+const historyFallback = require('connect-history-api-fallback');
 const logger = require('morgan');
 const open = require("open");
 
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// app.use(historyFallback());
+app.use(historyFallback());
 app.use("/web/", express.static(path.join(__dirname, 'dist')));
 
 app.use((req, res, next) => {
